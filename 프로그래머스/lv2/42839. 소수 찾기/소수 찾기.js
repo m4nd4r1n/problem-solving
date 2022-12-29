@@ -21,12 +21,12 @@ const solution = (numbers) => {
   return count;
 };
 
-const permutation = (array, length) => {
-  if (length === 1) return array.map((value) => [value]);
-  return array.flatMap((choice, index, origin) =>
-    permutation(
-      origin.filter((_, idx) => idx !== index),
-      length - 1
-    ).map((value) => [choice, ...value])
-  );
-};
+const permutation = (array, length) =>
+  length === 1
+    ? array.map((value) => [value])
+    : array.flatMap((choice, index, origin) =>
+        permutation(
+          origin.filter((_, idx) => idx !== index),
+          length - 1
+        ).map((value) => [choice, ...value])
+      );
