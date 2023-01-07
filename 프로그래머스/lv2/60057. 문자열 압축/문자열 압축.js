@@ -5,7 +5,7 @@ function chunkSubstr(str, size) {
 function solution(s) {
   const orgLen = s.length;
   const resultLen = [];
-  for (let i = 1; i < s.length; i++) {
+  for (let i = 1; i < orgLen; i++) {
     const sliced = chunkSubstr(s, i);
     let same = false;
     let result = "";
@@ -26,6 +26,6 @@ function solution(s) {
     }
     resultLen[i - 1] = result.length;
   }
-  if (s.length === 1) resultLen.push(1);
+  if (orgLen === 1) resultLen.push(1);
   return Math.min(...resultLen);
 }
