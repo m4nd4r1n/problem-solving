@@ -1,9 +1,12 @@
-function solution(participant, completion) {
-  participant.sort();
-  completion.sort();
-  for (let i = 0; i < participant.length; i++) {
-    if (participant[i] !== completion[i]) {
-      return participant[i];
-    }
-  }
-}
+const solution = (participant, completion) => {
+  const completionMap = completion.reduce((map, name) => {
+    if (map[name]) map[name] += 1;
+    else map[name] = 1;
+    return map;
+  }, {});
+
+  return participant.find((name) => {
+    if (completionMap[name]) completionMap[name] -= 1;
+    else return !completionMap[name];
+  });
+};
