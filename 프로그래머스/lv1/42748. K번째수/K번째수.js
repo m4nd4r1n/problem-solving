@@ -1,11 +1,5 @@
-function solution(array, commands) {
-  const answer = [];
-  for (const command of commands) {
-    const sliced = array.slice(command[0] - 1, command[1]);
-
-    sliced.sort((a, b) => a - b);
-    console.log(sliced);
-    answer.push(sliced[command[2] - 1]);
-  }
-  return answer;
-}
+const solution = (array, commands) =>
+  commands.map(
+    ([offset1, offset2, target]) =>
+      array.slice(offset1 - 1, offset2).sort((a, b) => a - b)[target - 1]
+  );
