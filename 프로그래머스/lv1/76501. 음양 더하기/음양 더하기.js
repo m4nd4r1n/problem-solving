@@ -1,11 +1,6 @@
-function solution(absolutes, signs) {
-  let answer = 0;
-  for (let i = 0; i < signs.length; i++) {
-    if (signs[i]) {
-      answer += absolutes[i];
-    } else {
-      answer -= absolutes[i];
-    }
-  }
-  return answer;
-}
+const solution = (absolutes, signs) =>
+  signs.reduce(
+    (answer, sign, index) =>
+      sign ? (answer += absolutes[index]) : (answer -= absolutes[index]),
+    0
+  );
