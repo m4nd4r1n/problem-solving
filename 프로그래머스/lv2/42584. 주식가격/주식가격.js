@@ -9,10 +9,9 @@ function solution(prices) {
     stack.push([index, price]);
 
     if (price > nextPrice) {
-      while (stack[stack.length - 1][PRICE] > nextPrice) {
+      while (stack.length && stack[stack.length - 1][PRICE] > nextPrice) {
         const [targetIndex] = stack.pop();
         result[targetIndex] = index - targetIndex + 1;
-        if (!stack.length) break;
       }
     }
   });
