@@ -1,14 +1,14 @@
-# [Gold III] 고스택 - 3425 
+# [Gold IV] 고스택 - 3425 
 
 [문제 링크](https://www.acmicpc.net/problem/3425) 
 
 ### 성능 요약
 
-메모리: 2164 KB, 시간: 8 ms
+메모리: 17832 KB, 시간: 372 ms
 
 ### 분류
 
-자료 구조(data_structures), 구현(implementation), 스택(stack)
+자료 구조, 구현, 스택
 
 ### 문제 설명
 
