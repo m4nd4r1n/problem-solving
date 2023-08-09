@@ -4,11 +4,11 @@
 
 ### 성능 요약
 
-메모리: 8296 KB, 시간: 24 ms
+메모리: 31088 KB, 시간: 404 ms
 
 ### 분류
 
-자료 구조(data_structures), 수학(math), 정수론(number_theory), 우선순위 큐(priority_queue)
+자료 구조, 수학, 정수론, 우선순위 큐
 
 ### 문제 설명
 
