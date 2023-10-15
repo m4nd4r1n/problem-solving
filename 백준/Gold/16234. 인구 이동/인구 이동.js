@@ -15,7 +15,6 @@ rl.on('line', (line) => {
 });
 
 const solution = (N, L, R, map) => {
-  const tempMap = map.map((row) => [...row]);
   const visited = Array.from(Array(N), () => Array(N).fill(false));
   const dx = [0, 0, -1, 1];
   const dy = [-1, 1, 0, 0];
@@ -44,7 +43,6 @@ const solution = (N, L, R, map) => {
           if (diff >= L && diff <= R) {
             queue.push([nx, ny]);
             visited[nx][ny] = true;
-            isMoved = true;
           }
         }
       }
@@ -52,7 +50,7 @@ const solution = (N, L, R, map) => {
 
     const divide = Math.floor(sum / unions.length);
     for (const [x, y] of unions) {
-      tempMap[x][y] = divide;
+      map[x][y] = divide;
     }
   };
 
@@ -60,18 +58,29 @@ const solution = (N, L, R, map) => {
     isMoved = false;
     for (let i = 0; i < N; i++) {
       for (let j = 0; j < N; j++) {
-        if (!visited[i][j]) {
+        let shouldMove = false;
+        for (let k = 0; k < 4; k++) {
+          const nx = i + dx[k];
+          const ny = j + dy[k];
+
+          if (nx >= 0 && nx < N && ny >= 0 && ny < N) {
+            const diff = Math.abs(map[i][j] - map[nx][ny]);
+            if (diff >= L && diff <= R) {
+              shouldMove = true;
+              break;
+            }
+          }
+        }
+        if (shouldMove && !visited[i][j]) {
+          isMoved = true;
           bfs(i, j);
         }
       }
     }
-    for (let i = 0; i < N; i++) {
-      for (let j = 0; j < N; j++) {
-        visited[i][j] = false;
-        map[i][j] = tempMap[i][j];
-      }
-    }
     if (!isMoved) return count;
+    for (const row of visited) {
+      row.fill(false);
+    }
     count += 1;
   }
 };
