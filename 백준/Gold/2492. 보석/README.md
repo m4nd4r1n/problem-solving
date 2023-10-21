@@ -4,11 +4,15 @@
 
 ### 성능 요약
 
-메모리: 2020 KB, 시간: 4 ms
+메모리: 13452 KB, 시간: 236 ms
 
 ### 분류
 
-브루트포스 알고리즘(bruteforcing), 슬라이딩 윈도우(sliding_window)
+브루트포스 알고리즘
+
+### 제출 일자
+
+2023년 10월 21일 19:42:20
 
 ### 문제 설명
 
@@ -18,7 +22,7 @@
 
 <p>예를 들어, 아래 그림에서 K=3인 경우 가장 많은 금강석을 포함하는 정사각형은 5개의 금강석을 포함한다. </p>
 
-<p style="text-align: center;"><img alt="" src="" style="width: 284px; height: 186px;"></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/6afee9f8-bbc1-4c99-ae2e-5767893fca64/-/preview/" style="width: 284px; height: 186px;"></p>
 
 <p>지질 탐사 지도에 대한 정보를 입력받아 가장 많은 금강석을 포함하는 정사각형을 구하는 프로그램을 작성하라. </p>
 
